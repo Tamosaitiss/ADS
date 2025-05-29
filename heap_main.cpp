@@ -3,11 +3,11 @@ using namespace std;
 
 void heapify(vector<int>& arr, int n, int i){
 
-    int largest = i;
+    int largest = i; //didziausisas sk. kaip saknis
 
-    int l = 2 * i + 1;
+    int l = 2 * i + 1; //kairys child
 
-    int r = 2 * i + 2;
+    int r = 2 * i + 2; //desinys child
 
     if (l < n && arr[l] > arr[largest])
         largest = l;
@@ -25,14 +25,14 @@ void heapify(vector<int>& arr, int n, int i){
 void heapSort(vector<int>& arr){
     int n = arr.size();
 
-    for (int i = n / 2 - 1; i >= 0; i--)
+    for (int i = n / 2 - 1; i >= 0; i--) //palieka leaf nots ramybej
         heapify(arr, n, i);
 
-    for (int i = n - 1; i > 0; i--) {
+    for (int i = n - 1; i > 0; i--) { //iskleiaami elementai is heap po viena
 
         swap(arr[0], arr[i]);
 
-        heapify(arr, i, 0);
+        heapify(arr, i, 0); //nuo postiotion 0, kad elementus imtu is saknies
     }
 }
 
