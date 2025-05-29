@@ -1,6 +1,6 @@
 from collections import deque
 
-def bfs_farthest_node(graph, start):
+def bfs_farthest_node(graph, start): #funkcija toliamiausiui mazgui nuo virsunes surast
     visited = {start}
     queue = deque([(start, 0)])
     farthest_node = start
